@@ -8,8 +8,8 @@ output NINTI,NINTO;
 wire SO;
 wire [7:0] data_out,R_Data;
 Buffer TX_Buffer (Clock,Reset,load,Tx_Data,data_out);
-USRT_Tx Transmission(Clock, Reset, SEND, data_out, SO, NINTO); 
-USRT_Rx Reception(Clock,Reset,SO,R_Data, NINTI); 
+UART_Tx Transmission(Clock, Reset, SEND, data_out, SO, NINTO); 
+UART_Rx Reception(Clock,Reset,SO,R_Data, NINTI); 
 Buffer Rx_Buffer (Clock,Reset,READ,R_Data,Rx_Data);
 
 endmodule
